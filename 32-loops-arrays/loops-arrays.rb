@@ -20,3 +20,16 @@ elements = []
 end
 
 elements.each {|element| puts "Element was: #{element}"}
+
+(0..5).each {|element| puts "range operator 0..5 element: #{element}"}
+(0...5).each {|element| puts "range operator 0...5 element: #{element}"}
+
+mix = ["a", "b"] << "c"
+mix.each do |mix_element|
+  puts "<< push element to mix: #{mix_element}"
+end
+
+mix << 1 << [2, 3]
+mix.each do |mix_element|
+  puts "<< be chained push element to mix: #{mix_element}"
+end
