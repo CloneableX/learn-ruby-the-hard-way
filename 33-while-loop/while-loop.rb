@@ -1,15 +1,28 @@
-numbers = []
-i = 0
+def init_numbers_by_while(max, step)
+  numbers = []
+  i = 0
+  while i < max
+    puts "At the top i is #{i}"
 
-while i < 6
-  puts "At the top i is #{i}"
+    numbers << i
+    puts "Numbers now:", numbers
 
-  numbers << i
-  puts "Numbers now:", numbers
+    i += step
+    puts "At the bottom i is #{i}"
+  end
 
-  i += 1
-  puts "At the bottom i is #{i}"
+  return numbers
 end
+
+def init_numbers_by_for(max, step)
+  numbers = []
+  (0...max).step(step).each {|number| numbers << number}
+  return numbers
+end
+
+puts "numbers_for is:", init_numbers_by_for(6, 2)
+
+numbers = init_numbers_by_while(6, 1)
 
 puts "The numbers:"
 
